@@ -1,0 +1,29 @@
+﻿@model Model_TV.Models.TV_ShowLanguages
+@{
+}
+<form asp-action="Create" method="post">
+
+@* 	<input type="text" asp-for="@Model.TV_ShowId " />
+	<br />
+	<input type="text" asp-for="@Model.LanguagesId " /> *@
+    @{
+        ViewBag.tvlst = await repo.GetAllTAsync();
+        ViewBag.lnlst = await repoLanguages.GetAllTAsync();
+
+    }
+    <div class="form-group">
+        <label asp-for="TV_ShowId" class="control-label"></label>
+        <select asp-for="TV_ShowId" class="form-control" asp-items="@(new SelectList(ViewBag.tvlst, "Id", "Title"))">
+        </select>
+        <span asp-validation-for="TV_ShowId" class="text-danger"></span>
+    </div>
+
+
+    https://localhost:7141/TV_ShowLanguages/create
+
+
+
+    <button type="submit">Add</button>
+
+</form>
+

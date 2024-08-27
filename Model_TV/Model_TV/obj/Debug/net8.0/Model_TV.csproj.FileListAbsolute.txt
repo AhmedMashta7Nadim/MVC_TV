@@ -1,0 +1,26 @@
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\Model_TV\Model_TV\bin\Debug\net8.0\Model_TV.deps.json
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\Model_TV\Model_TV\bin\Debug\net8.0\Model_TV.dll
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\Model_TV\Model_TV\bin\Debug\net8.0\Model_TV.pdb
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\Model_TV\Model_TV\obj\Debug\net8.0\Model_TV.csproj.AssemblyReference.cache
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\Model_TV\Model_TV\obj\Debug\net8.0\Model_TV.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\Model_TV\Model_TV\obj\Debug\net8.0\Model_TV.AssemblyInfoInputs.cache
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\Model_TV\Model_TV\obj\Debug\net8.0\Model_TV.AssemblyInfo.cs
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\Model_TV\Model_TV\obj\Debug\net8.0\Model_TV.csproj.CoreCompileInputs.cache
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\Model_TV\Model_TV\obj\Debug\net8.0\Model_TV.sourcelink.json
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\Model_TV\Model_TV\obj\Debug\net8.0\Model_TV.dll
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\Model_TV\Model_TV\obj\Debug\net8.0\refint\Model_TV.dll
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\Model_TV\Model_TV\obj\Debug\net8.0\Model_TV.pdb
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\Model_TV\Model_TV\obj\Debug\net8.0\ref\Model_TV.dll
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\githunb mvc\Model_TV\Model_TV\bin\Debug\net8.0\Model_TV.deps.json
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\githunb mvc\Model_TV\Model_TV\bin\Debug\net8.0\Model_TV.dll
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\githunb mvc\Model_TV\Model_TV\bin\Debug\net8.0\Model_TV.pdb
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\githunb mvc\Model_TV\Model_TV\obj\Debug\net8.0\Model_TV.csproj.AssemblyReference.cache
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\githunb mvc\Model_TV\Model_TV\obj\Debug\net8.0\Model_TV.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\githunb mvc\Model_TV\Model_TV\obj\Debug\net8.0\Model_TV.AssemblyInfoInputs.cache
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\githunb mvc\Model_TV\Model_TV\obj\Debug\net8.0\Model_TV.AssemblyInfo.cs
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\githunb mvc\Model_TV\Model_TV\obj\Debug\net8.0\Model_TV.csproj.CoreCompileInputs.cache
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\githunb mvc\Model_TV\Model_TV\obj\Debug\net8.0\Model_TV.sourcelink.json
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\githunb mvc\Model_TV\Model_TV\obj\Debug\net8.0\Model_TV.dll
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\githunb mvc\Model_TV\Model_TV\obj\Debug\net8.0\refint\Model_TV.dll
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\githunb mvc\Model_TV\Model_TV\obj\Debug\net8.0\Model_TV.pdb
+C:\Users\NOUR-ALSHAM\source\ProjectMedadMVC\githunb mvc\Model_TV\Model_TV\obj\Debug\net8.0\ref\Model_TV.dll

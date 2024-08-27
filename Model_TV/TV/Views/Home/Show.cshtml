@@ -1,0 +1,115 @@
+﻿@model IList<TV_ShowSummary>
+@using Model_TV.VM
+@using Model_TV.Models
+@inject IRepositryAllModel<Attachment, AttachmentSummary> attachmentRepository
+@inject IStringLocalizer<TV_Show> stringLocalizer;
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Show Website</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>@ViewBag.tvwibsite</h1>
+    </header>
+
+    <!-- Navigation -->
+  @*   <nav>
+      
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shows</a></li>
+                <li><a asp-action="Show" asp-controller="Home" asp-route-culture="en-US">English</a></li>
+                <li><a asp-action="Show" asp-controller="Home" asp-route-culture="ar-SY">Arabic</a></li>
+            <li><a asp-action="Create" asp-controller="TV_Show">Add</a></li>
+        </ul>
+    </nav> *@
+
+    <!-- Main Section -->
+    
+    @{
+
+        var result = await repo.GetAllTAsync();
+        int counter = (int)Math.Ceiling(result.Count() / 2.0);// هاد الكود حطيتو منشان اذا كانت قيمة فردية ياخد اعلى قيمة اذا كانو عندي 7 قيم يعرضلي 8 بجنيشن
+
+    }
+
+    <nav class="pagination-sm">
+        <ul class="pagination">
+            @for (int i = 0; i < counter; i++)
+            {
+                
+                <li class="page-item">
+                    <a class="page-link" asp-controller="Home" asp-action="Show" asp-route-p="@(i+1)">@(i + 1)</a>
+                </li>
+            }
+
+        </ul>
+    </nav>
+    
+
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-danger text-center" role="alert" style="margin-top: 20px;">
+            @* No TV Shows available at the moment. *@
+            @ViewBag.alert
+        </div>
+    }
+    else
+    {
+        <div class="container mt-4">
+            <div class="row">
+                @foreach (var ee in Model)
+                {
+                    var attachment = attachmentRepository.GetById(ee.AttachmentId).Result;
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="~/@(attachment.Path_File)" width="100px" height="170px" class="card-img-top" alt="@ee.Title">
+                            <div class="card-body">
+                                <h5 class="card-title">@ViewBag.title : @ee.Title</h5>
+                                <p class="card-text">@ViewBag.Rating : @ee.Rating</p>
+                                <p class="card-text">@ViewBag.ReleaseDate : @ee.ReleaseDate.ToShortDateString()</p>
+
+                                <a asp-action="Details"
+                                   asp-route-id="@ee.Id"
+                                   asp-controller="TV_Show"
+                                   class="btn btn-primary"
+                                   target="_blank">
+                                    @ViewBag.VisitShow
+                                </a>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+
+  @*   <main>
+        
+        <div class="showcase">
+            // هون كنت مستدعي الكوميونينت 
+            @await Component.InvokeAsync("TV_ShowList",x)
+           
+          
+        </div>
+
+    </main>
+   *@
+    
+</body>
+
+</html>
+
+
+
+

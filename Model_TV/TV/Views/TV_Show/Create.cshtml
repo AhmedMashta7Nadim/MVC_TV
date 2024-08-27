@@ -1,0 +1,88 @@
+﻿@model Model_TV.Models.TV_Show
+@inject IRepositryAllModel<Languages, LanguagesSummary> repo;
+@inject IRepositryAllModel<TV_ShowLanguages, TV_ShowLanguagesSummary> repoTV_ShowLanguages;
+
+@{
+    ViewData["Title"] = "Create";
+    var languages = await repo.GetAllTAsync(); // منشان نجيب كل اللغات
+    var tv = await repoTV_ShowLanguages.GetAllTAsync();
+}
+
+<h1 class="text-center mt-4">Create TV Show</h1>
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <form asp-action="Create" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Title" class="form-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="ReleaseDate" class="form-label"></label>
+                        <input asp-for="ReleaseDate" class="form-control" />
+                        <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Rating" class="form-label"></label>
+                        <input asp-for="Rating" class="form-control" />
+                        <span asp-validation-for="Rating" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="URL" class="form-label"></label>
+                        <input asp-for="URL" class="form-control" />
+                        <span asp-validation-for="URL" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="AttachmentId" class="form-label"></label>
+                        <select asp-for="AttachmentId" class="form-control" asp-items="ViewBag.lst">
+                        </select>
+                        <span asp-validation-for="AttachmentId" class="text-danger"></span>
+                    </div>
+                  
+
+
+                    <div class="form-group mb-3">
+                        <label for="Languages" class="form-label">Select Languages</label>
+                        @foreach (var language in languages)
+                        {
+                            <div class="form-check">
+                                @*منجيب اللغة ك ايدي ومنمررا لليستا
+                                selectlanguash
+                                الي بدورا بتقوم بتخزنن وبلاخير بتضيفن على جدول كسر العلاقة 
+                                *@
+                                <input type="checkbox" name="selectlanguash" value="@language.Id" class="form-check-input" />
+                                <label class="form-check-label">@language.Name</label>
+
+                            </div>
+                        }
+                    </div>
+
+
+
+                    <div class="form-group text-center">
+                        <input type="submit" value="Create" class="btn btn-primary w-50" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-3">
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

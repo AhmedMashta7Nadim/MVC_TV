@@ -1,0 +1,50 @@
+﻿@model IList<TV_ShowSummary>
+@using Model_TV.VM
+@using Model_TV.Models
+@inject IRepositryAllModel<Attachment, AttachmentSummary> attachmentRepository
+@inject IStringLocalizer<TV_Show> stringLocalizer;
+
+@{
+    ViewBag.titles = stringLocalizer["Title"];
+    var ratingLabel = stringLocalizer["Rating"];
+    var releaseDateLabel = "Release Date";
+    var visitShowLabel = "VisitShow";    
+}
+
+@if (Model.Count == 0)
+{
+    <div class="alert alert-danger text-center" role="alert" style="margin-top: 20px;">
+        No TV Shows available at the moment.
+    </div>
+}
+else
+{
+    <div class="container mt-4">
+        <div class="row">
+            @foreach (var ee in Model)
+            {
+                var attachment = attachmentRepository.GetById(ee.AttachmentId).Result;
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="~/@(attachment.Path_File)" width="100px" height="170px" class="card-img-top" alt="@ee.Title">
+                        <div class="card-body">
+                            <h5 class="card-title">@ViewBag.title : @ee.Title</h5>
+                            <p class="card-text">@ViewBag.Rating : @ee.Rating</p>
+                            <p class="card-text">@ViewBag.ReleaseDate : @ee.ReleaseDate.ToShortDateString()</p>
+
+                            <a asp-action="Details"
+                               asp-route-id="@ee.Id"
+                               asp-controller="TV_Show"
+                               class="btn btn-primary"
+                               target="_blank">
+                                @ViewBag.VisitShow
+                            </a>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
